@@ -3,24 +3,24 @@
 #include<stdlib.h>
 int main(void) {
 	int city;
-	int* road;
-	int* gas_price;
-	int total_price = 0;
-	int min;
+	long long* road;
+	long long* gas_price;
+	long long total_price = 0;
+	long long min;
 
 
 	//정보 입력 받기
 	scanf("%d", &city);
-	road = (int*)malloc(sizeof(int) * (city - 1));
-	gas_price = (int*)malloc(sizeof(int) * city);
+	road = (long long*)malloc(sizeof(long long) * (city - 1));
+	gas_price = (long long*)malloc(sizeof(long long) * city);
 	for (int i = 0; i < city - 1; i++) {
-		scanf("%d", &road[i]);
+		scanf("%lld", &road[i]);
 	}
 	for (int i = 0; i < city; i++) {
-		scanf("%d", &gas_price[i]);
+		scanf("%lld", &gas_price[i]);
 	}
 
-	
+
 	min = gas_price[0];
 	for (int i = 0; i < city - 1; i++) {
 		if (min <= gas_price[i]) {
@@ -32,8 +32,8 @@ int main(void) {
 		}
 	}
 
-	printf("%d", total_price);
-	
+	printf("%lld", total_price);
+
 	free(road);
 	free(gas_price);
 	return 0;
